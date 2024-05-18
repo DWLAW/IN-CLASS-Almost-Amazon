@@ -1,5 +1,5 @@
 # Almost Amazon
-We are building an admin app that allows a store owner to login to the app and manage books and authors.
+We are building an admin app that allows a store owner to login to the app and manage books and authors.a
 
 [User Restricted Deployed Sample](https://almost-amazon-webpack5.netlify.app/#)
 
