@@ -1,7 +1,7 @@
 import { signOut } from '../utils/auth';
 import { booksOnSale, getBooks } from '../api/bookData';
 import { showBooks } from '../pages/books';
-import { getAuthors } from '../api/authorData';
+import { favAuthor, getAuthors } from '../api/authorData';
 import { showAuthors, emptyAuthors } from '../pages/authors';
 
 // navigation events
@@ -30,6 +30,11 @@ const navigationEvents = () => {
     } else {
       getAuthors().then(showAuthors);
     }
+  });
+
+  // filter by favorite author
+  document.querySelector('#sale-books').addEventListener('click', () => {
+    favAuthor().then(showAuthors);
   });
 
   // STRETCH: SEARCH
