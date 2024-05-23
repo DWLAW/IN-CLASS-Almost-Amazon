@@ -33,7 +33,7 @@ const navigationEvents = () => {
   });
 
   // filter by favorite author
-  document.querySelector('#sale-books').addEventListener('click', () => {
+  document.querySelector('#favorite-authors').addEventListener('click', () => {
     favAuthor().then(showAuthors);
   });
 
