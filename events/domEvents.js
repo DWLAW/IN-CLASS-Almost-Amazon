@@ -4,7 +4,7 @@ import { showAuthors } from '../pages/authors';
 import { showBooks } from '../pages/books';
 import addBookForm from '../components/forms/addBookForm';
 import addAuthorForm from '../components/forms/addAuthorForm';
-import getBookDetails from '../api/mergedData';
+import { getBookDetails } from '../api/mergedData';
 import viewBook from '../pages/viewBook';
 
 const domEvents = () => {
@@ -58,6 +58,12 @@ const domEvents = () => {
       const [, firebaseKey] = e.target.id.split('--');
       getSingleAuthor(firebaseKey).then((authorObject) => addAuthorForm(authorObject));
     }
+
+    // TODO: CLICK EVENT FOR VIEWING AUTHOR DETAILS
+    // if (e.target.id.includes('view-author-btn')) {
+    //   const [, firebaseKey] = e.target.id.split('--');
+    //   viewAuthor(firebaseKey);
+    // }
   });
 };
 
