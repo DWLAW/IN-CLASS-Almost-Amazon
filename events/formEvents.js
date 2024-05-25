@@ -46,13 +46,11 @@ const formEvents = () => {
 
     // FIXME: ADD CLICK EVENT FOR SUBMITTING FORM FOR ADDING AN AUTHOR
     if (e.target.id.includes('submit-author')) {
-      const [, firebaseKey] = e.target.id.split('--');
       const payload = {
         email: document.querySelector('#email').value,
         first_name: document.querySelector('#first_name').value,
         last_name: document.querySelector('#last_name').value,
         favorite: document.querySelector('#favorite').checked,
-        firebaseKey,
       };
       createAuthor(payload).then(({ name }) => {
         const patchPayload = { firebaseKey: name };
@@ -64,7 +62,6 @@ const formEvents = () => {
     }
     // FIXME:ADD CLICK EVENT FOR EDITING AN AUTHOR
     if (e.target.id.includes('update-author')) {
-      console.warn('update-auth clicked');
       const [, firebaseKey] = e.target.id.split('--');
       const payload = {
         email: document.querySelector('#email').value,
